@@ -22,7 +22,7 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
 
-      - name: Crear, etiquetar y enviar imágen a AWS ECR
+      - name: Crear,etiquetar y enviar imágen a AWS ECR
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: crozo
