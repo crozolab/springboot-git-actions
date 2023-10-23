@@ -8,7 +8,9 @@ WORKDIR /app
 COPY . .
 
 # Compilar y empaquetar la aplicación en un archivo JAR
+RUN echo "Antes de ejecutar mvnw"
 RUN ./mvnw clean install
+RUN echo "Después de ejecutar mvnw"
 
 # Exponer el puerto en el que se ejecuta la aplicación Spring Boot (por ejemplo, el puerto 8080)
 EXPOSE 8080
