@@ -1,14 +1,17 @@
-# Usamos una imagen base de OpenJDK 11
+# Usar una imagen base de OpenJDK 11
 FROM openjdk:11
 
-# Establecemos un directorio de trabajo dentro del contenedor
+# Establecer el directorio de trabajo en el contenedor
 WORKDIR /app
 
-# Copiamos el archivo JAR de la aplicación al directorio de trabajo
-COPY target/spring-boot-docker.jar app.jar
+# Copiar el código fuente de la aplicación al contenedor
+COPY . .
 
-# Exponemos el puerto 8080 (si es necesario)
+# Compilar y empaquetar la aplicación en un archivo JAR
+RUN ./mvnw clean package
+
+# Exponer el puerto en el que se ejecuta la aplicación Spring Boot (por ejemplo, el puerto 8080)
 EXPOSE 8080
 
-# Definimos el comando de entrada para ejecutar la aplicación
+# Comando de inicio para ejecutar la aplicación Spring Boot
 CMD ["java", "-jar", "app.jar"]
