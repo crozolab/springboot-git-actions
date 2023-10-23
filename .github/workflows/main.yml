@@ -8,7 +8,6 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout Código
         uses: actions/checkout@v2
@@ -16,7 +15,8 @@ jobs:
       - name: Configurar JDK
         uses: actions/setup-java@v2
         with:
-          java-version: '11' # Selecciona la versión de Java adecuada
+          java-version: 11
+          distribution: 'adopt'
 
       - name: Ejecutar Pruebas Unitarias
         run: |
