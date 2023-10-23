@@ -6,7 +6,7 @@ WORKDIR /app
 
 # Copiar el código fuente de la aplicación al contenedor
 COPY . .
-
+RUN chmod +x mvnw
 # Compilar y empaquetar la aplicación en un archivo JAR
 RUN echo "Antes de ejecutar mvnw"
 RUN ./mvnw clean install
