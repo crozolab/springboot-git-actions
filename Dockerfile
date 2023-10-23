@@ -8,7 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Compilar y empaquetar la aplicación en un archivo JAR
-RUN ./mvnw clean package
+RUN ./mvnw clean install
 
 # Exponer el puerto en el que se ejecuta la aplicación Spring Boot (por ejemplo, el puerto 8080)
 EXPOSE 8080
