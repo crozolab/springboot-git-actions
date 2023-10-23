@@ -17,7 +17,8 @@ jobs:
         with:
           java-version: 11
           distribution: 'adopt'
-
+      - name: Cambiar permisos de mvnw
+        run: chmod +x ./mvnw
       - name: Ejecutar Pruebas Unitarias
         run: |
           # Esto es un ejemplo para Maven. Ajusta el comando según tu sistema de construcción.
