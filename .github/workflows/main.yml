@@ -6,6 +6,23 @@ on:
       - main
 
 jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Código
+        uses: actions/checkout@v2
+
+      - name: Configurar JDK
+        uses: actions/setup-java@v2
+        with:
+          java-version: '11' # Selecciona la versión de Java adecuada
+
+      - name: Ejecutar Pruebas Unitarias
+        run: |
+          # Esto es un ejemplo para Maven. Ajusta el comando según tu sistema de construcción.
+          ./mvnw test
+
   create-docker-image:
     name: Build Image - Crear imagen docker
     runs-on: ubuntu-latest
